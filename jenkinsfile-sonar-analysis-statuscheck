@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Git Clone or Pull"){
             steps{
-                git url: 'https://github.com/javahometech/my-app-2021'
+                git url: 'https://github.com/amashhour1974/my-app-2021'
             }
         }
         stage("Maven Build"){
@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Sonar Publish"){
             steps{
-                withSonarQubeEnv('sonar7') {
+                withSonarQubeEnv('sonar-9') {
                   sh "mvn sonar:sonar"
                 }
             }
